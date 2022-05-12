@@ -1,0 +1,26 @@
+CREATE DATABASE IF NOT EXIST thogakade;
+USE thogakade;
+
+CREATE TABLE IF NOT EXIST customer(
+    id VARCHAR (10),
+    name VARCHAR (45),
+    address VARCHAR (45),
+    salary INT
+);
+
+CREATE TABLE IF NOT EXIST item(
+    code VARCHAR (10),
+    name VARCHAR (45),
+    qty INT,
+    price INT
+);
+
+CREATE TABLE IF NOT EXIST orderdet(
+    oId VARCHAR (10),
+    itemCode VARCHAR (10),
+    cId VARCHAR (10),
+    cusName VARCHAR (45),
+    price INT,
+    qty INT,
+    total INT
+);

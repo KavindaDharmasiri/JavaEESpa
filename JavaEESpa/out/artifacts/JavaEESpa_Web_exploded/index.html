@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pos System</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link crossorigin="anonymous"
+          href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+          integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" rel="stylesheet">
+</head>
+
+<body>
+
+<section class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Uresha POS System</a>
+            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler" data-bs-target="#navbarSupportedContent"
+                    data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a aria-current="page" class="nav-link active" href="#" id="Ghome">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="Gorder">Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="Gitem">Items</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
+                           id="navbarDropdown" role="button">
+                            Others
+                        </a>
+                        <ul aria-labelledby="navbarDropdown" class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" id="Gcustomer">Customer</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <button class="btn btn-lg btn-primary" disabled type="button">Sign Up</button>
+                    <button class="btn btn-secondary btn-lg" disabled type="button">Log Out</button>
+                </form>
+            </div>
+        </div>
+        <hr>
+    </nav>
+</section>
+
+
+<section id="homeClass" style="background-color: #efefef">
+    <div class="carousel slide" data-bs-ride="carousel" id="carouselExampleIndicators">
+        <div class="carousel-indicators">
+            <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0"
+                    data-bs-target="#carouselExampleIndicators" type="button"></button>
+            <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleIndicators"
+                    type="button"></button>
+            <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleIndicators"
+                    type="button"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img alt="..." class="d-block w-100" src="assets/img/pexels-daria-shevtsova-1095550.jpg">
+            </div>
+            <div class="carousel-item">
+                <img alt="..." class="d-block w-100" src="assets/img/pexels-ella-olsson-1640777.jpg">
+            </div>
+            <div class="carousel-item">
+                <img alt="..." class="d-block w-100" src="assets/img/pexels-lisa-fotios-1279330.jpg">
+            </div>
+        </div>
+        <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleIndicators"
+                type="button">
+            <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleIndicators"
+                type="button">
+            <span aria-hidden="true" class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
+<!--customer-->
+<section id="customerClass">
+    <section class="container" style="padding-top: 40px;font-size: 20px">
+
+        <img alt="" src="assets/img/icons8-customer-64.png" style="width: 20px;
+     height: 20px;display: inline-block"><h5>Customer</h5>
+    </section>
+    <section class="container" style="background-color: #efefef">
+
+        <table class="table table-success table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Home>Customer</th>
+            </tr>
+            </thead>
+        </table>
+
+        <section class="row mt-3 justify-content-around">
+            <form class="col-12 col-md-3" style="background-color: white;display: inline-block">
+                <div class="modal-header" style="background-color: green">
+                    <h5 class="modal-title">Customer Search</h5>
+                </div>
+                <section style="padding: 20px">
+                    <div class="mb-3">
+                        <label class="form-label" for="exampleInputEmail1">Input Name/NIC/Tp Here</label>
+                        <input aria-describedby="emailHelp" class="form-control" id="customerIdSearch"
+                               id="exampleInputEmail1" type="text">
+                    </div>
+                    <button class="btn btn-primary col-3" id="searchCustomer" type="submit">Search</button>
+                    <select class="col-3">
+                        <option>Name</option>
+                    </select>
+                </section>
+            </form>
+
+            <section class="col-12 col-md-3" style="display: inline-block">
+                <button class="btn btn-primary" id="saveCustomer" type="button">Add New
+                    Customer
+                </button>
+
+                <button class="btn btn-warning" type="button">View All Customers</button>
+            </section>
+
+            <div class="col-6 col-md-5">
+                <div class="mb-3">
+                    <label class="form-label" for="custID">Customer ID</label>
+                    <input class="form-control" id="custId" placeholder="Customer ID" type="text">
+                    <p><small class="text-danger p-1" id="error"></small></p>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="custName">Customer Name</label>
+                    <input class="form-control" id="custName" placeholder="Customer Name" type="text">
+                    <p><small class="text-danger p-1" id="error1"></small></p>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="custAddress">Customer Address</label>
+                    <input class="form-control" id="custAddress" placeholder="Customer Address" type="text">
+                    <p><small class="text-danger p-1" id="error2"></small></p>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="custTP">Customer Tp</label>
+                    <input class="form-control" id="custTP" placeholder="Customer Tp" type="text">
+                    <p><small class="text-danger p-1" id="error3"></small></p>
+                </div>
+            </div>
+        </section>
+        <section style="padding: 20px">
+            <button class="btn btn-danger" id="updateCustomer" type="button">Update</button>
+            <button class="btn btn-primary" id="deleteCustomer" type="button">Delete</button>
+            <button class="btn btn-success" id="clearCustomer" type="button">Clear</button>
+        </section>
+
+        <section class="row mt-4">
+            <div class="col">
+                <table class="table table-hover" id="tableCus">
+                    <thead class="bg-danger text-white">
+                    <tr>
+                        <th>Customer ID</th>
+                        <th>Customer Name</th>
+                        <th>Customer Address</th>
+                        <th>Customer Tp.</th>
+                    </tr>
+                    </thead>
+                    <tbody id="customerTable">
+
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </section>
+</section>
+
+<!--item-->
+<section id="itemClass">
+    <section class="container" style="padding-top: 40px;font-size: 20px"><i class="fas fa-users"
+                                                                            style="width: 20px;height: auto"></i>Items
+    </section>
+    <section class="container" style="background-color: #efefef">
+
+        <table class="table table-success table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Home>Items</th>
+            </tr>
+            </thead>
+        </table>
+        <section class="row mt-3 justify-content-around">
+            <form class="col-12 col-md-3" style="background-color: white; display: inline-block">
+                <div class="modal-header" style="background-color: green">
+                    <h5 class="modal-title">Item Search</h5>
+                </div>
+                <section style="padding: 20px">
+                    <div class="mb-3">
+                        <label class="form-label" for="exampleInputEmail11">Input Item Name/Code Here</label>
+                        <input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail11" type="text">
+                    </div>
+                    <button class="btn btn-primary col-3" id="searchItem" type="submit">Search</button>
+                    <select class="col-3">
+                        <option>Name</option>
+                    </select>
+                </section>
+            </form>
+
+            <section class="col-12 col-md-3" style="display: inline-block">
+                <button class="btn btn-primary" id="saveItem" type="button">New Item</button>
+                <button class="btn btn-warning" type="button">View All Items</button>
+            </section>
+            <div class="col-12 col-md-5">
+                <div class="mb-3">
+                    <label class="form-label" for="itemCode">Item Code</label>
+                    <input class="form-control" id="itemCode" placeholder="Item Code" type="text">
+                    <p><small class="text-danger p-1" id="error5"></small></p>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="itemName">Item Name</label>
+                    <input class="form-control" id="itemName" placeholder="Item Name" type="text">
+                    <p><small class="text-danger p-1" id="error6"></small></p>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="itemQty">Item Qty</label>
+                    <input class="form-control" id="itemQty" placeholder="Item Qty" type="text">
+                    <p><small class="text-danger p-1" id="error7"></small></p>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="itemPrice">Item Price</label>
+                    <input class="form-control" id="itemPrice" placeholder="Item Price" type="text">
+                    <p><small class="text-danger p-1" id="error8"></small></p>
+                </div>
+            </div>
+        </section>
+        <section style="padding: 20px">
+            <button class="btn btn-danger" id="updateItem" type="button">Update</button>
+            <button class="btn btn-primary" id="deleteItem" type="button">Delete</button>
+            <button class="btn btn-success" id="clearItem" type="button">Clear</button>
+        </section>
+
+
+        <section class="row mt-4">
+            <div class="col">
+                <table class="table table-hover" id="tableIte">
+                    <thead class="bg-danger text-white">
+                    <tr>
+                        <th scope="col">Item Code</th>
+                        <th scope="col">Item Name</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                    </thead>
+                    <tbody id="itemTable">
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </section>
+</section>
+
+<!--order-->
+<section id="orderClass">
+    <br><br><br>
+    <table class="table table-dark table-striped" style="position: relative;
+    top: 12px;">
+        <thead>
+        <tr>
+            <th scope="col">Home > Orders</th>
+        </tr>
+        </thead>
+    </table>
+    <section style="background-color: gray;padding: 20px">
+
+        <form class="col-4 " id="cusCol" style="background-color: white; padding: 20px;display: inline-block">
+            <legend style="background-color: green">Invoice Details</legend>
+            <div class="row">
+                <div class="col col-6">
+                    <label class="form-label" for="exampleInputEmail40">Order ID:</label>
+                    <input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail40" onfocus="getId()"
+                           type="text">
+                </div>
+                <div class="col col-6">
+                    <label class="form-label" for="exampleInputEmail4">Date:</label>
+                    <input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail4" type="text">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-6">
+
+                    <br>
+                    <label class="form-label" for="customerMenu">Customer:</label>
+                    <select id="customerMenu" onchange="ddlselect();">
+                        <option value="default">default</option>
+
+                    </select>
+                    <!-- <input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail2" type="submit">-->
+                </div>
+                <div class="col col-6">
+                    <label class="form-label" for="exampleInputEmail5">Customer ID:</label>
+                    <input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail5" type="text">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-6">
+                    <label class="form-label" for="exampleInputEmail3">Name:</label>
+                    <input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail3" type="text">
+                </div>
+                <div class="col col-6">
+                    <label class="form-label" for="exampleInputEmail6">Tp:</label>
+                    <input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail6" type="text">
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label class="form-label" for="exampleInputEmail7">Address:</label>
+                <input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail7" type="text">
+            </div>
+        </form>
+
+        <form class="col-4 " style="background-color: white; padding: 20px;display: inline-block">
+            <legend style="background-color: green">Item Select</legend>
+            <div class="row">
+                <div class="col col-6">
+                    <br>
+                    <label class="form-label" for="itemMenu">Item:</label>
+
+                    <select id="itemMenu" onchange="ddlItemselect();">
+                        <option value="default">default</option>
+                    </select>
+
+                </div>
+                <div class="col col-6">
+                    <label class="form-label" for="exampleInputEmail9">Item Code:</label>
+                    <input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail9" type="text">
+                    <p><small class="text-danger p-1" id="error13"></small></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-5">
+                    <label class="form-label" for="exampleInputEmail10">Item Name:</label>
+                    <input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail10" type="text">
+                    <p><small class="text-danger p-1" id="error14"></small></p>
+                </div>
+                <div class="col col-4">
+                    <label class="form-label" for="exampleInputEmail41">Price:</label>
+                    <input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail41" type="text">
+                    <p><small class="text-danger p-1" id="error15"></small></p>
+                </div>
+                <div class="col col-3">
+                    <label class="form-label" for="exampleInputEmail12">QtyOnH:</label>
+                    <input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail12" type="text">
+                    <p><small class="text-danger p-1" id="error16"></small></p>
+                </div>
+            </div>
+            <div class="col-12">
+                <label class="form-label" for="exampleInputEmail13">Order Quantity:</label>
+                <input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail13" type="email">
+                <p><small class="text-danger p-1" id="error11"></small></p>
+            </div>
+            <br>
+
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-danger" id="addBtn" type="button">Add Item</button>
+            </div>
+        </form>
+
+        <form class="col-3 " style="background-color: white; padding: 20px;display: inline-block">
+            <br>
+            <div class="row">
+                <div class="col col-6">
+                    <label class="form-label" style="color: #0dcaf0;font-size: 20px">Total : </label>
+                </div>
+                <div class="col col-6">
+                    <label class="form-label" id="allPrice" style="color: #0dcaf0;font-size: 20px">0Rs/=</label>
+                </div>
+            </div>
+
+            <br>
+            <div class="row">
+                <div class="col col-6">
+                    <label class="form-label" style="color: #bb2d3b;font-size: 20px">SubTotal : </label>
+                </div>
+                <div class="col col-6">
+                    <label class="form-label" id="subtotal" style="color: #bb2d3b;font-size: 20px">0Rs/=</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-6">
+                    <label class="form-label" for="exampleInputEmail14">Cash:</label>
+                    <input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail14" type="text">
+                    <p><small class="text-danger p-1" id="error20"></small></p>
+                </div>
+                <div class="col col-6">
+                    <label class="form-label" for="discount">Discount:</label>
+                    <input aria-describedby="emailHelp" class="form-control" id="discount" type="text">
+                    <p><small class="text-danger p-1" id="error12"></small></p>
+                </div>
+            </div>
+            <div class="col-12">
+                <label class="form-label" for="balance">Balance:</label>
+                <input aria-describedby="emailHelp" class="form-control" id="balance" type="text">
+            </div>
+            <br>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-success" id="btnPurchase" type="button">Purchase</button>
+            </div>
+        </form>
+        <br><br>
+
+
+        <table class="table">
+            <thead class="table-success">
+            <tr>
+                <th scope="col">Item Code</th>
+                <th scope="col">Item Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Total</th>
+            </tr>
+            </thead>
+            <tbody id="orderTbl">
+
+            </tbody>
+        </table>
+    </section>
+</section>
+
+
+<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+<script src="db/DB.js"></script>
+<script src="controller/IndexController.js"></script>
+<script src="controller/CustomerController.js"></script>
+<script src="controller/ItemController.js"></script>
+<script src="controller/OrderController.js"></script>
+<script src="model/Customer.js"></script>
+<script src="model/Item.js"></script>
+<script src="model/OrderDetails.js"></script>
+<script src="model/Orders.js"></script>
+
+<script>
+</script>
+</body>
+</html>
