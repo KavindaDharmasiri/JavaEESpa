@@ -108,7 +108,7 @@ function getId() {
     var orderDetailDB = [];
 
     $.ajax({
-        url: "order?name=" + "GETID",
+        url:"http://localhost:8080/unnamed/order?option=" + "GETID",
         method: "GET",
         /*option: "GETALL",*/
         success: function (resp) {
@@ -145,7 +145,7 @@ function searchOrder() {
     console.log("search")
     console.log(searchID)
     $.ajax({
-        url: "order?oId=" + searchID ,
+        url: "http://localhost:8080/unnamed/order?oId=" + searchID+"&option="+"SEARCH" ,
         method: "GET",
 
 
@@ -350,7 +350,7 @@ function saveOrderDetail() {
         };
 
         $.ajax({
-            url: "order",
+            url: "http://localhost:8080/unnamed/order",
             method: "POST",
             contentType: "application/json", //request content type json
             data: JSON.stringify(orderOb),
@@ -373,7 +373,7 @@ function saveOrderDetail() {
 
     $("#orderTbl").empty();
     $.ajax({
-        url: "order?cId=" + "GETALL",
+        url: "http://localhost:8080/unnamed/order?cId=" + "GETALL",
         method: "GET",
 
         success: function (resp) {

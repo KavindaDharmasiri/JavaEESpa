@@ -13,7 +13,7 @@ function saveCustomer() {
     }
 
     $.ajax({
-        url: "customer",
+        url: "http://localhost:8080/unnamed/customer",
         method: "POST",
         contentType: "application/json", //request content type json
         data: JSON.stringify(cusOb),
@@ -44,7 +44,8 @@ function clearAll() {
 function loadAllCustomers() {
     $("#customerTable").empty();
     $.ajax({
-        url: "customer?CusName=" + "GETALL",
+
+        url: "http://localhost:8080/unnamed/customer?option=" + "GETALL",
         method: "GET",
 
         success: function (resp) {
@@ -101,7 +102,7 @@ $("#updateCustomer").click(function () {
     }
 
     $.ajax({
-        url: "customer",
+        url: "http://localhost:8080/unnamed/customer",
         method: "PUT",
         contentType: "application/json", //request content type json
         data: JSON.stringify(cusOb),
@@ -128,7 +129,7 @@ function deleteCustomer() {
     let custId = $("#custId").val();
 
     $.ajax({
-        url: "customer?CusID=" + custId,
+        url: "http://localhost:8080/unnamed/customer?CusID="+custId,
         method: "DELETE",
         success: function (res) {
 
@@ -242,7 +243,7 @@ function searchCustomer(){
     console.log("search")
     console.log(searchID)
     $.ajax({
-        url: "customer?cusId=" + searchID,
+        url: "http://localhost:8080/unnamed/customer?cusId=" + searchID+"&option=SEARCH",
         method: "GET",
 
         success: function (resp) {

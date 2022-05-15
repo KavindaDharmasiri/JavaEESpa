@@ -16,7 +16,8 @@ function saveItem() {
     }
 
     $.ajax({
-        url: "item",
+        url: "http://localhost:8080/unnamed/item",
+
         method: "POST",
         contentType: "application/json", //request content type json
         data: JSON.stringify(itemOb),
@@ -47,7 +48,7 @@ function clearAllItems() {
 function loadAllItems() {
     $("#itemTable").empty();
     $.ajax({
-        url: "item?name=" + "GETALL",
+        url: "http://localhost:8080/unnamed/item?option=" + "GETALL",
         method: "GET",
         /*option: "GETALL",*/
         success: function (resp) {
@@ -110,7 +111,7 @@ $("#updateItem").click(function () {
     }
 
     $.ajax({
-        url: "item",
+        url: "http://localhost:8080/unnamed/item",
         method: "PUT",
         contentType: "application/json", //request content type json
         data: JSON.stringify(itemOb),
@@ -150,7 +151,7 @@ $("#deleteItem").click(function () {
     let itemCode = $("#itemCode").val();
 
     $.ajax({
-        url: "item?code=" + itemCode,
+        url: "http://localhost:8080/unnamed/item?code=" + itemCode,
         method: "DELETE",
         success: function (res) {
 
@@ -222,7 +223,7 @@ function searchItem(){
     console.log("search")
     console.log(searchID)
     $.ajax({
-        url: "item?code=" + searchID,
+        url: "http://localhost:8080/unnamed/item?code=" + searchID+"&option=SEARCH",
         method: "GET",
 
 
@@ -238,7 +239,7 @@ function searchItem(){
 }
 
 $("#viewAllitem").click(function () {
-   loadAllItems();
+    loadAllItems();
 });
 
 $("#searchItem").click(function () {
@@ -330,3 +331,4 @@ $("#itemPrice").keyup(function () {
 });
 
 /*END REGEX*/
+
